@@ -47,7 +47,7 @@ function App() {
   } else {
     <div>
       {/* <Result definition={definition} /> */}
-      <h1>{definition.meaningOne}</h1>
+      <Result definition={definition} />
     </div>;
   }
 }
