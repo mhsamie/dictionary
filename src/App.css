@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+  margin: 10px auto;
+  width: 350px;
+}
+div {
+  align-items: center;
+}
+
+.section,
+.picture-section {
+  display: block;
+  margin: 0 auto;
+}
+.picture-section {
+  position: absolute;
+  top: 15%;
+}
+.section {
+  width: 100vw;
+  height: 85vh;
+}
+.person {
+  width: 20%;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  margin-left: -10%;
+}
