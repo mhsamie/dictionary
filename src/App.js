@@ -13,15 +13,16 @@ function App() {
 
   const searchHandler = (e) => {
     e.preventDefault();
+    setInfo(true);
+    console.log(info);
+
     //api docs: https://dictionaryapi.dev/
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyWord}`;
     axios.get(apiUrl).then((response) => {
       setDefinition({
         meaningOne: response.data[0].meanings[0].definitions[0].definition,
       });
-
-      setInfo(true);
-      console.log(info);
+      setInfo(false);
     });
   };
   // console.log(definition.meaningOne);
@@ -47,7 +48,7 @@ function App() {
   } else {
     <div>
       <h1> is this working or not?</h1>
-      {/* <Result definition={definition} /> */}
+
       <Result definition={definition} />
     </div>;
   }
