@@ -19,10 +19,11 @@ function App() {
     //api docs: https://dictionaryapi.dev/
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyWord}`;
     axios.get(apiUrl).then((response) => {
+      setInfo(false);
+      console.log(info);
       setDefinition({
         meaningOne: response.data[0].meanings[0].definitions[0].definition,
       });
-      setInfo(false);
     });
   };
   // console.log(definition.meaningOne);
@@ -30,7 +31,13 @@ function App() {
   const searchWords = (e) => {
     setKeyWord(e.target.value);
   };
-  if (info === false) {
+  if (definition) {
+    return (
+      <div>
+        <Result definition={definition} />
+      </div>
+    );
+  } else {
     return (
       <div>
         <h1>WELCOME TO SAMì DICTIONARI</h1>
@@ -45,12 +52,6 @@ function App() {
         </div>
       </div>
     );
-  } else {
-    <div>
-      <h1> is this working or not?</h1>
-
-      <Result definition={definition} />
-    </div>;
   }
 }
 
