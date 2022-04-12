@@ -11,6 +11,7 @@ const Result = ({ definition, searchWords, searchHandler, info }) => {
           <h2>SAMì DICTIONARI</h2>
           <form onSubmit={searchHandler} className="result-form">
             <input
+              className="result-input"
               placeholder="Search for another word"
               onChange={searchWords}
               type="search"

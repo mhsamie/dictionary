@@ -42,12 +42,13 @@ function App() {
     return (
       <div>
         <h1>WELCOME TO SAMì DICTIONARI</h1>
-
-        <DictionarySearch
-          searchWords={searchWords}
-          searchHandler={searchHandler}
-          info={info}
-        />
+        <div className="mobile-version">
+          <DictionarySearch
+            searchWords={searchWords}
+            searchHandler={searchHandler}
+            info={info}
+          />
+        </div>
         <div className="picture-section">
           <img className="section" src={section} alt="main section" />
           <img className="person" src={person} alt="person" />

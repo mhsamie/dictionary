@@ -27,3 +27,23 @@ div {
   left: 50%;
   margin-left: -10%;
 }
+@media (max-width: 500px) {
+  .section {
+    display: none;
+  }
+  .picture-section {
+    display: none;
+  }
+  h1 {
+    width: auto;
+  }
+  .mobile-version {
+    background-color: #28185c;
+    width: 80vw;
+    height: 70vh;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}

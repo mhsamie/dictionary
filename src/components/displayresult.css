@@ -7,7 +7,7 @@ header {
   align-items: center;
 }
 header img {
-  width: 38%;
+  width: 35%;
   height: 100%;
 }
 header h2 {
@@ -25,4 +25,21 @@ main {
   display: block;
   position: static;
   justify-content: flex-start;
+}
+
+@media (max-width: 500px) {
+  * {
+    margin: 0;
+  }
+  header {
+    justify-content: center;
+  }
+  header img {
+    display: none;
+  }
+  input {
+    width: 250px;
+    height: 32px;
+    font-size: 12px;
+  }
 }
