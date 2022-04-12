@@ -1,3 +1,10 @@
 .show-meaning {
-  padding: 5px 20px;
+  padding: 10px 25px;
+}
+.each-definition {
+  padding: 6px;
+}
+.synonym {
+  margin: 0 8px;
+  font-weight: 600;
 }

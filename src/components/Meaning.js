@@ -12,6 +12,14 @@ const Meaning = ({ meanings }) => {
           <small>
             <em>{definitions.example}</em>
           </small>
+          <p>
+            {meanings.synonyms.length > 1 ? "synonyms:" : null}
+            {meanings.synonyms.map((synonym, index) => (
+              <span className="synonym" key={index}>
+                {synonym}
+              </span>
+            ))}
+          </p>
         </div>
       ))}
     </div>
