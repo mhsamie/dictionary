@@ -14,19 +14,15 @@ function App() {
   const searchHandler = (e) => {
     e.preventDefault();
     setInfo(true);
-    console.log(info);
 
     //api docs: https://dictionaryapi.dev/
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyWord}`;
     axios.get(apiUrl).then((response) => {
       setInfo(false);
       console.log(info);
-      setDefinition({
-        meaningOne: response.data[0].meanings[0].definitions[0].definition,
-      });
+      setDefinition(response.data[0]);
     });
   };
-  // console.log(definition.meaningOne);
 
   const searchWords = (e) => {
     setKeyWord(e.target.value);
@@ -34,7 +30,12 @@ function App() {
   if (definition) {
     return (
       <div>
-        <Result definition={definition} />
+        <Result
+          definition={definition}
+          searchWords={searchWords}
+          searchHandler={searchHandler}
+          info={info}
+        />
       </div>
     );
   } else {
@@ -45,6 +46,7 @@ function App() {
         <DictionarySearch
           searchWords={searchWords}
           searchHandler={searchHandler}
+          info={info}
         />
         <div className="picture-section">
           <img className="section" src={section} alt="main section" />
