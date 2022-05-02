@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 25vw;
+  width: 120px;
 }
 .phonetic-section a {
   border: 1px solid #28185ca2;
