@@ -10,6 +10,7 @@ function App() {
   const [keyWord, setKeyWord] = useState("");
   const [definition, setDefinition] = useState();
   const [info, setInfo] = useState(false);
+  console.log(definition);
 
   const searchHandler = (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ function App() {
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyWord}`;
     axios.get(apiUrl).then((response) => {
       setInfo(false);
-      console.log(info);
+
       setDefinition(response.data[0]);
     });
   };
@@ -29,14 +30,13 @@ function App() {
   };
   if (definition) {
     return (
-      <div>
         <Result
           definition={definition}
           searchWords={searchWords}
           searchHandler={searchHandler}
           info={info}
         />
-      </div>
+      
     );
   } else {
     return (

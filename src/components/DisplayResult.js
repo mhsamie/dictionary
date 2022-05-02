@@ -2,9 +2,10 @@ import "./displayresult.css";
 import right from "../images/image 35.png";
 import left from "../images/image 36.png";
 import Meaning from "./Meaning";
+import Phonetics from "./Phonetics";
 const Result = ({ definition, searchWords, searchHandler, info }) => {
   return (
-    <div>
+    <div className="result-container">
       <header>
         <img src={right} alt="jingili" />
         <div>
@@ -23,6 +24,12 @@ const Result = ({ definition, searchWords, searchHandler, info }) => {
       </header>
       <main>
         <h1>{definition.word}</h1>
+        {definition.phonetics.map((phonetic, index) => (
+          <div key={index}>
+            <Phonetics phonetics={phonetic} />
+          </div>
+        ))}
+
         {definition.meanings.map((meanings, index) => (
           <div key={index}>
             <Meaning meanings={meanings} />

@@ -1,0 +1,15 @@
+.phonetic-section {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25vw;
+}
+.phonetic-section a {
+  border: 1px solid #28185ca2;
+  display: block;
+  padding: 0 0.3rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 14px;
+}

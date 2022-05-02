@@ -1,11 +1,13 @@
 import "./meaning.css";
 const Meaning = ({ meanings }) => {
-  console.log(meanings);
   return (
     <div className="show-meaning">
       <h3>{meanings.partOfSpeech}</h3>
       {meanings.definitions.map((definitions, index) => (
         <div className="each-definition" key={index}>
+          {/* we use index as key only when do this if items have no stable IDs, We don’t recommend using 
+          indexes for keys if the order of items may change. This can negatively impact performance and 
+          may cause issues with component state. */}
           <p>
             {index + 1}. {definitions.definition}
           </p>
